@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>&#128218; Smart Study Planner</h1>
+
+        <div class="day-selector" id="day-selector">
+            <button class="day-btn active" data-day="Monday">Mon</button>
+            <button class="day-btn" data-day="Tuesday">Tue</button>
+            <button class="day-btn" data-day="Wednesday">Wed</button>
+            <button class="day-btn" data-day="Thursday">Thu</button>
+            <button class="day-btn" data-day="Friday">Fri</button>
+            <button class="day-btn" data-day="Saturday">Sat</button>
+            <button class="day-btn" data-day="Sunday">Sun</button>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="subject" placeholder="Subject (e.g., DSA)"/>
+           
+            <label for="date-input">Choose date (optional):</label>
+                <input type="date" id="date-input" />
+
+            <div class="time-slot-generator">
+                <label>Start Time: <input type="time" id="start-time"/></label>
+                <lable>
+                    Duration:
+                    <select id="duration">
+                        <option value="15">15 min</option>
+                        <option value="30" selected>30 min</option>
+                        <option value="60">60 min</option>
+                    </select>
+                </lable>
+                <button type="button" id="generate-slot">Generate Time Slot</button>
+            </div>
+
+            <input type="text" id="time" placeholder="Time Slot" readonly/>
+            <input
+                type="text"
+                id="goal"
+                placeholder="Goal/Task (e.g., PYQ Practice)"
+            />
+            <button id="add-btn">&#10133; Add to Study Plan</button>
+        </div>
+
+        <div class="timetable" id="timetable">
+            <h2>&#128467; Your Study Plan</h2>
+            <div id="entries"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <button id="download-pdf">&#128196; Download Weekaly Timetable</button>
+        </div>
+    </div>
+    
+
+    <audio id="notify-sound" src="notification.wav" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
