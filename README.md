@@ -1,5 +1,5 @@
 # 📚 Smart Study Planner 
-A simple and interactive **web-based study timetable creator** built using **HTML, CSS, and JavaScript**.
+A simple and interactive **web-based study plan creator** built using **HTML, CSS, and JavaScript**.
 This app helps students plan their weekly schedule, get reminders, and download their timetable as a PDF.
 
 ## Features
